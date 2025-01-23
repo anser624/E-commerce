@@ -42,7 +42,7 @@ function cartitem(itemId) {
 
 // Function to display the cart items
 function displayCart() {
-  let cartContainer = document.getElementById("row"); // Reuse the "row" container to display cart items
+  let cartContainer = document.getElementById("row-1"); // Reuse the "row" container to display cart items
   cartContainer.innerHTML = ""; // Clear the container before rendering cart items
 
   if (cart.length === 0) {
@@ -52,13 +52,13 @@ function displayCart() {
 
   cart.forEach((item, index) => {
     cartContainer.innerHTML += `
-      <div class="card col-3 w-100 p-2 bg-white" id="cart-item-${index}">
-        <img src="${item.image}" class="card-img-top object-fit-cover img-cart" alt="${item.title}" />
-        <div class="card-body">
-          <h5 class="card-title">${item.title}</h5>
-          <p class="card-text">Category: ${item.category}</p>
-          <p class="card-text">Price: $${item.price}</p>
-          <button onclick="removeCartItem(${index})" class="btn btn-danger btn-sm">Remove</button>
+      <div class="card col-3 d-flex justify-content-between  mt-2 w-100 bg-info  p-2 bg-white" id="cart-item-${index}">
+        <img src="${item.image}" class="card-img-top object-fit-contain img-cart"  style="height: 100px; width: 100px;" alt="${item.title}" />
+        <h5 class="card-title">${item.title}</h5>
+        <p class="card-text">Category: ${item.category}</p>
+        <div class=" fs-6 card-body">
+        <p class="card-text">Price: $${item.price}</p>
+        <button onclick="removeCartItem(${index})" class="btn btn-danger btn-sm">Remove</button>
         </div>
       </div>`;
   });

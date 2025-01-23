@@ -2,6 +2,10 @@ body{
     box-sizing: border-box;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
+.navbar{
+    z-index: 1 !important ;
+    background-color: white !important;
+}
 .hover-under:after {
     content: "";
     position: absolute;
