@@ -22,7 +22,7 @@
           <div class="navbar-nav  gap-5">
             <a class="nav-item  nav-link active fw-bolder animation" href="#">Home</span></a>
             <a class="nav-item nav-link active fw-bolder animation" href="#">Contact Us</a>
-            <a class="nav-item nav-link active fw-bolder animation" href="#">Cart Item</a>
+            <a class="nav-item nav-link active fw-bolder animation" id="cartitem" href="#">Cart Item</a>
           </div>
         </div>
       </nav>
@@ -36,7 +36,8 @@
           <img class="object-fit-fill" src="img/main-logo.png" alt="Logo!">
         </div>
       </div>
-       <div class="hidebox" id="hidebox">
+      <!-- hide all box after click view cart item button in navbar  -->
+<div class="hidebox" id="hidebox">
         <!-- Slider -->
         <div id="carouselExampleIndicators" class="carousel slide mt-5 mb-5">
           <div class="carousel-indicators">
@@ -110,12 +111,10 @@
                 Connect with Us: Let's Discuss Your Needs !
               </p>
             </div>
-            </div>
-          </div>
           </div>
         </div>
-        <!-- Contact Form Box Div -->
-        <div class="border-3  br border-black bg-light container d-flex justify-content-between mt-5">
+         <!-- Contact Form Box Div -->
+         <div class="border-3  br border-black bg-light container d-flex justify-content-between mt-5">
           <div class="row bg-gain mt-5 p-5 fw-bolder text-capitalize gap-4 ">
             <div class="col-7 p-5">
               <div class="mt-01 mb-2">
@@ -137,7 +136,12 @@
             <img class="overflow-hidden img-form" src="img/contact-photo.png" alt="LocalImage">
           </div>
         </div>
-       </div>     
+       </div>
+    </div>
+       
+       <!-- View Cart Item Box Container After Click Button(View Cart) in Navbar -->
+      <div id="row-1" class="mt-3 container p-2 w-100 ">
+      </div>     
       <!-- footer -->
        <hr>
       <div class="container-fluid bg-light  p-5">
@@ -157,9 +161,6 @@
               <a href=""class="animation">Blog</a>
             </div>
           </div>
-      </div>
-      <!-- View Cart Item Box Container After Click Button(View Cart) in Navbar -->
-      <div id="row-1" class="mt-3 container p-2 w-100 ">
       </div>
   </body>
 <script src="bootstrap/bootstrap-5.0.2-dist/js/bootstrap.min.js"></script>

@@ -26,6 +26,9 @@ getStoreData()
 document.getElementById("viewitem").addEventListener("click", () => {
   document.getElementById("row").classList.remove("d-none");
 });
+document.getElementById('cartitem').addEventListener("click",()=>{
+  document.getElementById('hidebox').classList.add("d-none");
+})
 let cart = [];
 
 // Function to add items to the cart
