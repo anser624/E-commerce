@@ -1,16 +1,15 @@
 async function getStoreData() {
   const fakeStoreApi = await fetch("https://fakestoreapi.com/products/");
   const result = await fakeStoreApi.json();
-  
-  console.log(result);
+  // console.log(result);
   let cont = document.getElementById("row");
   let card = document.createElement("div");
-  card.setAttribute("class", "row w-100");
-  
+  card.setAttribute("class", "row w-100");  
   result.map((item) => {
     card.innerHTML += `
     <div id="${item.id}" class=" carditem card col-2 w-25 fs-6 pt-4 mt-3 ms-5 bg-white" >
               <img src="${item.image}" id="img" class="card-img-top" alt="">
+              <hr>
               <div class="card-body fs-3 fw-bolder">
                 <h5 class="card-title" id="title">${item.title}</h5>
                 <h5 class="card-text" id="category">${item.category}</h5>
@@ -23,11 +22,10 @@ async function getStoreData() {
     cont.appendChild(card);
   });
 }
-getStoreData();
-
-document.getElementById('viewitem').addEventListener('click',()=>{
-  document.getElementById('row').classList.remove('d-none');
-})
+getStoreData()
+document.getElementById("viewitem").addEventListener("click", () => {
+  document.getElementById("row").classList.remove("d-none");
+});
 let cart = [];
 
 // Function to add items to the cart
@@ -42,16 +40,16 @@ function cartitem(itemId) {
 
 // Function to display the cart items
 function displayCart() {
-  let cartContainer = document.getElementById("row-1"); // Reuse the "row" container to display cart items
+  let cartContainer = document.getElementById("row-1");
+  // Use the "row-1" container to display cart items
   cartContainer.innerHTML = ""; // Clear the container before rendering cart items
-
   if (cart.length === 0) {
     cartContainer.innerHTML = `<p class="text-center w-100 fw-bold">Your cart is empty.</p>`;
     return;
-  }
-
-  cart.forEach((item, index) => {
+  } 
+  cart.forEach((item,index) => { 
     cartContainer.innerHTML += `
+    <h1 id="heading" class="fw-bolder text-center m-3 text-decoration-underline">Cart-Item-${index}</h1>
       <div class="card col-3 d-flex justify-content-between  mt-2 w-100 bg-info  p-2 bg-white" id="cart-item-${index}">
         <img src="${item.image}" class="card-img-top object-fit-contain img-cart"  style="height: 100px; width: 100px;" alt="${item.title}" />
         <h5 class="card-title">${item.title}</h5>
@@ -60,10 +58,9 @@ function displayCart() {
         <p class="card-text">Price: $${item.price}</p>
         <button onclick="removeCartItem(${index})" class="btn btn-danger btn-sm">Remove</button>
         </div>
-      </div>`;
+        </div>`;
   });
 }
-
 // Function to remove an item from the cart
 function removeCartItem(index) {
   const removedItem = cart.splice(index, 1)[0];
